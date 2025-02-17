@@ -10,11 +10,16 @@ function Square({ value, onSquareClick }) {
 
 export default function ClueSheet() {
   const storedCurrent = localStorage.getItem('entries');
+  const storedPlayers = localStorage.getItem('players');
   const initialCurrent = storedCurrent ? JSON.parse(storedCurrent) : Array.from({ length:21 }, () => (Array.from({ length:6 }, () => null)));
+  const initialPlayers = storedPlayers ? JSON.parse(storedPlayers) : Array.from({ length:6}, () => "");
   const [current, updateCurrent] = useState(initialCurrent);
+  const [players, updatePlayers] = useState(initialPlayers);
+
   const suspects = ["Colonel Mustard", "Professor Plum", "Green", "Mr. Peacock", "Miss Scarlet", "Mrs. White"];
   const weapons = ["Knife", "Candle stick", "Revolver", "Rope", "Lead pipe", "Wrench"];
   const rooms = ["Hall", "Lounge", "Dining room", "Kitchen", "Ballroom", "Conservatory", "Billiard room", "Library", "Study"];
+
   function handleUpdate(row, col){
     const nextCurrent=[...current.slice(0,22)];
     let val=nextCurrent[row][col];
@@ -33,12 +38,40 @@ export default function ClueSheet() {
     localStorage.setItem('entries', JSON.stringify(nextCurrent));
     updateCurrent(nextCurrent);
   }
+
+  function playerUpdate(index, val){
+    const newPlayers=[...players.slice(0,7)];
+    newPlayers[index]=val;
+    localStorage.setItem('players', JSON.stringify(newPlayers));
+    updatePlayers(newPlayers);
+    console.log(val);
+  }
   return (
     <div className='outer'>
       <div className="sheet">
+        <Players players={players} onPlayerUpdate={playerUpdate} />
         <Section title="Suspect" entries={suspects} offset={0}  data={current} handleUpdate={handleUpdate} />
         <Section title="Weapons" entries={weapons} offset={6} data={current} handleUpdate={handleUpdate} />
         <Section title="Rooms" entries={rooms} offset={12} data={current} handleUpdate={handleUpdate} />
+      </div>
+    </div>
+
+  );
+}
+
+function Players({players, onPlayerUpdate}){
+  return(
+    <div className='sectionTable'>
+      <div className='playerSection'>
+        <div className='playerTitle'>Players</div>
+        <div>
+          <input type="text" maxLength={2} className='playerText' value={players[0]} onChange={(e) => onPlayerUpdate(0, e.target.value)}/>
+          <input type="text" maxLength={2} className='playerText' value={players[1]} onChange={(e) => onPlayerUpdate(1, e.target.value)}/>
+          <input type="text" maxLength={2} className='playerText' value={players[2]} onChange={(e) => onPlayerUpdate(2, e.target.value)}/>
+          <input type="text" maxLength={2} className='playerText' value={players[3]} onChange={(e) => onPlayerUpdate(3, e.target.value)}/>
+          <input type="text" maxLength={2} className='playerText' value={players[4]} onChange={(e) => onPlayerUpdate(4, e.target.value)}/>
+          <input type="text" maxLength={2} className='playerText' value={players[5]} onChange={(e) => onPlayerUpdate(5, e.target.value)}/>
+        </div>
       </div>
     </div>
 
