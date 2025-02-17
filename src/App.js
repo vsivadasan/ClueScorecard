@@ -82,18 +82,53 @@ export default function Game() {
     );
   });
 
+  const suspects = ["Colonel Mustard", "Professor Plum", "Green", "Mr. Peacock", "Miss Scarlet", "Mrs. White"];
+  const weapons = ["Knife", "Candle stick", "Revolver", "Rope", "Lead pipe", "Wrench"];
+  const rooms = ["Hall", "Lounge", "Dining room", "Kitchen", "Ballroom", "Conservatory", "Billiard room", "Library", "Study"];
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      </div>
-      <div className="game-info">
-        <ol>{moves}</ol>
-      </div>
+    // <div className="game">
+    //   <div className="game-board">
+    //     <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+    //   </div>
+    //   <div className="game-info">
+    //     <ol>{moves}</ol>
+    //   </div>
+    // </div>
+    <div className="sheet">
+      <Section className="section" title="Suspect" entries={suspects}/>
+      <Section title="Weapons" entries={weapons}/>
+      <Section title="Rooms" entries={rooms}/>
     </div>
   );
 }
 
+function Section({title, entries}){
+  const renderedEntries = entries.map((entry) => {
+    return (
+    <>
+    <div className='sectionRow'>
+      <div className='sectionRowEntryTitle'>
+        {entry}
+      </div>
+        <div className='sectionEntries'>
+            <div className='sectionEntry'><Square key={entry + 1} value="X" onSquareClick={() => {}} /></div>
+            <div className='sectionEntry'><Square key={entry + 2} value="X" onSquareClick={() => {}} /></div>
+            <div className='sectionEntry'><Square key={entry + 3} value="X" onSquareClick={() => {}} /></div>
+            <div className='sectionEntry'><Square key={entry + 4} value="X" onSquareClick={() => {}} /></div>
+            <div className='sectionEntry'><Square key={entry + 5} value="X" onSquareClick={() => {}} /></div>
+            <div className='sectionEntry'><Square key={entry + 6} value="X" onSquareClick={() => {}} /></div>
+        </div>
+      </div>
+    </>
+  );
+  });
+  return (
+  <>
+  <div className='sectionTitle'>{title}</div>
+  <div className='sectionTable'>{renderedEntries}</div>
+  </>
+  );
+}
 function calculateWinner(squares) {
   const lines = [
     [0, 1, 2],

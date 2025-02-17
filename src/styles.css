@@ -88,3 +88,47 @@ body {
 .game-info {
   margin-left: 20px;
 }
+
+.sheet {
+  border: 1px solid #999;
+  max-width: 400px; 
+  width: 100%; 
+}
+
+.section {
+  border: 1px solid #999
+}
+
+.sectionTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px ;
+  background-color: #999;
+  font-weight: 800;
+}
+
+.sectionTable {
+  display: table;
+  border: 1px #999;
+}
+
+.sectionRow {
+  display: table-row;
+  border: 1px #999;
+}
+
+.sectionRowEntryTitle {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: 150px;
+}
+
+.sectionEntries {
+  display: table-cell;
+}
+
+.sectionEntry {
+  display: table-cell;
+}
