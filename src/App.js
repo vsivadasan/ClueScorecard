@@ -113,18 +113,18 @@ export default function Game() {
     // </div>
     <div className='outer'>
       <div className="sheet">
-        <Section title="Suspect" entries={suspects} range={[0,5]}  data={current} handleUpdate={handleUpdate} />
-        <Section title="Weapons" entries={weapons} range={[6,11]} data={current} handleUpdate={handleUpdate} />
-        <Section title="Rooms" entries={rooms} range={[12,20]} data={current} handleUpdate={handleUpdate} />
+        <Section title="Suspect" entries={suspects} offset={0}  data={current} handleUpdate={handleUpdate} />
+        <Section title="Weapons" entries={weapons} offset={6} data={current} handleUpdate={handleUpdate} />
+        <Section title="Rooms" entries={rooms} offset={12} data={current} handleUpdate={handleUpdate} />
       </div>
     </div>
 
   );
 }
 
-function Section({title, entries, range, data, handleUpdate}){
+function Section({title, entries, offset, data, handleUpdate}){
   const renderedEntries = entries.map((entry, index) => {
-    const row = range[0]+index;
+    const row = offset+index;
     const dataRow = data[row];
     return (
     <>
