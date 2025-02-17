@@ -9,7 +9,9 @@ function Square({ value, onSquareClick }) {
 }
 
 export default function ClueSheet() {
-  const [current, updateCurrent] = useState(Array.from({ length:21 }, () => (Array.from({ length:6 }, () => null))));
+  const storedCurrent = localStorage.getItem('entries');
+  const initialCurrent = storedCurrent ? JSON.parse(storedCurrent) : Array.from({ length:21 }, () => (Array.from({ length:6 }, () => null)));
+  const [current, updateCurrent] = useState(initialCurrent);
   const suspects = ["Colonel Mustard", "Professor Plum", "Green", "Mr. Peacock", "Miss Scarlet", "Mrs. White"];
   const weapons = ["Knife", "Candle stick", "Revolver", "Rope", "Lead pipe", "Wrench"];
   const rooms = ["Hall", "Lounge", "Dining room", "Kitchen", "Ballroom", "Conservatory", "Billiard room", "Library", "Study"];
@@ -28,6 +30,7 @@ export default function ClueSheet() {
     else{
       nextCurrent[row][col]=null;
     }
+    localStorage.setItem('entries', JSON.stringify(nextCurrent));
     updateCurrent(nextCurrent);
   }
   return (
