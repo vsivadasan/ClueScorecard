@@ -94,11 +94,14 @@ export default function Game() {
     //     <ol>{moves}</ol>
     //   </div>
     // </div>
-    <div className="sheet">
-      <Section className="section" title="Suspect" entries={suspects}/>
-      <Section title="Weapons" entries={weapons}/>
-      <Section title="Rooms" entries={rooms}/>
+    <div className='outer'>
+      <div className="sheet">
+        <Section className="section" title="Suspect" entries={suspects}/>
+        <Section title="Weapons" entries={weapons}/>
+        <Section title="Rooms" entries={rooms}/>
+      </div>
     </div>
+
   );
 }
 

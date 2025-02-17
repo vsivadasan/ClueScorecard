@@ -58,14 +58,12 @@ body {
 
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: .5px solid #999;
   float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
   height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
   padding: 0;
   text-align: center;
   width: 34px;
@@ -89,9 +87,15 @@ body {
   margin-left: 20px;
 }
 
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .sheet {
   border: 1px solid #999;
-  max-width: 400px; 
+  max-width: 350px; 
   width: 100%; 
 }
 
@@ -123,6 +127,8 @@ body {
   text-align: center;
   vertical-align: middle;
   width: 150px;
+  padding: 0;
+  border: .5px solid #999;
 }
 
 .sectionEntries {
