@@ -15,7 +15,7 @@
     "react-dom": "19.0.0-rc-3edc000d-20240926",
     "react-scripts": "^5.0.0"
   },
-  "homepage": "https://vsivadasan.github.io/cluescorecard",
+  "homepage": "https://vsivadasan.github.io/ClueScorecard/",
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
