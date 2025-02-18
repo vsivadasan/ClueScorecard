@@ -1,19 +1,24 @@
 {
-  "name": "cluescore",
+  "name": "cluescorecard",
   "version": "0.0.0",
   "main": "/src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b main -d build"
   },
   "dependencies": {
     "react": "19.0.0-rc-3edc000d-20240926",
     "react-dom": "19.0.0-rc-3edc000d-20240926",
     "react-scripts": "^5.0.0"
   },
-  "devDependencies": {},
+  "homepage": "https://vsivadasan.github.io/cluescorecard",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
