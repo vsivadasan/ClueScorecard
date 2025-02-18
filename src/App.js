@@ -64,7 +64,7 @@ export default function ClueSheet() {
       </div>
       <div className="sheet">
         <Players players={players} onPlayerUpdate={playerUpdate} />
-        <Section title="Suspect" entries={suspects} offset={0}  data={current} handleUpdate={handleUpdate} />
+        <Section title="Suspects" entries={suspects} offset={0}  data={current} handleUpdate={handleUpdate} />
         <Section title="Weapons" entries={weapons} offset={6} data={current} handleUpdate={handleUpdate} />
         <Section title="Rooms" entries={rooms} offset={12} data={current} handleUpdate={handleUpdate} />
       </div>

@@ -1,4 +1,4 @@
-# ClueScore
+# ClueScorecard
 
 A simple clue game score sheet. 
 
