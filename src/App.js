@@ -16,7 +16,7 @@ export default function ClueSheet() {
   const [current, updateCurrent] = useState(initialCurrent);
   const [players, updatePlayers] = useState(initialPlayers);
 
-  const suspects = ["Colonel Mustard", "Professor Plum", "Green", "Mr. Peacock", "Miss Scarlet", "Mrs. White"];
+  const suspects = ["Colonel Mustard", "Professor Plum", "Mr. Green", "Mr. Peacock", "Miss Scarlet", "Mrs. White"];
   const weapons = ["Knife", "Candle stick", "Revolver", "Rope", "Lead pipe", "Wrench"];
   const rooms = ["Hall", "Lounge", "Dining room", "Kitchen", "Ballroom", "Conservatory", "Billiard room", "Library", "Study"];
 
@@ -44,10 +44,24 @@ export default function ClueSheet() {
     newPlayers[index]=val;
     localStorage.setItem('players', JSON.stringify(newPlayers));
     updatePlayers(newPlayers);
-    console.log(val);
   }
+
+  function resetScorecard(){
+    const nextCurrent=Array.from({ length:21 }, () => (Array.from({ length:6 }, () => null)));
+    localStorage.setItem('entries', JSON.stringify(nextCurrent));
+    updateCurrent(nextCurrent);
+  }
+
   return (
     <div className='outer'>
+      <div className='header'>
+        <h1>Clue Scorecard</h1>
+        <div className='controls'>
+          <div>
+            <button onClick={resetScorecard}>Reset</button>
+          </div>
+        </div>
+      </div>
       <div className="sheet">
         <Players players={players} onPlayerUpdate={playerUpdate} />
         <Section title="Suspect" entries={suspects} offset={0}  data={current} handleUpdate={handleUpdate} />
