@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ClueScorecard/static/css/main.dcf227b3.css",
-    "main.js": "/ClueScorecard/static/js/main.3d7f24cd.js",
+    "main.js": "/ClueScorecard/static/js/main.52ec6561.js",
     "index.html": "/ClueScorecard/index.html",
     "main.dcf227b3.css.map": "/ClueScorecard/static/css/main.dcf227b3.css.map",
-    "main.3d7f24cd.js.map": "/ClueScorecard/static/js/main.3d7f24cd.js.map"
+    "main.52ec6561.js.map": "/ClueScorecard/static/js/main.52ec6561.js.map"
   },
   "entrypoints": [
     "static/css/main.dcf227b3.css",
-    "static/js/main.3d7f24cd.js"
+    "static/js/main.52ec6561.js"
   ]
 }
