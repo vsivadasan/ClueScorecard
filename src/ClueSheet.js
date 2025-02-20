@@ -62,6 +62,10 @@ export default function ClueSheet() {
           <Section title="Weapons" entries={weapons} offset={6} data={current} handleUpdate={handleUpdate} />
           <Section title="Rooms" entries={rooms} offset={12} data={current} handleUpdate={handleUpdate} />
         </div>
+        <div>
+        <p><sub>This website is not affiliated with, endorsed, or sponsored by Hasbro, Inc. or any of its affiliates. <br />
+        Clue and Cluedo are trademarks of Hasbro, Inc. and are used here for informational purposes only.</sub></p>
+        </div>
       </div>
   
     );
