@@ -4,11 +4,15 @@ export default function Section({title, entries, offset, data, handleUpdate}){
     const renderedEntries = entries.map((entry, index) => {
       const row = offset+index;
       const dataRow = data[row];
+
+      const isSolution = dataRow.every(it => it=='X');
+      const isNotSolution = dataRow.includes('✓');
+      const title = isNotSolution ? <s>{entry}</s> : (isSolution ? <b>{entry}</b> : entry);
       return (
       <>
       <div key={entry} className='sectionRow'>
         <div key={entry+'title'} className='sectionRowEntryTitle'>
-          {entry}
+          {title}
         </div>
           <div key={entry+"render"} className='sectionEntries'>
               <div className='sectionEntry'><Square key={entry + 1} value={dataRow[0]} onSquareClick={() => handleUpdate(row,0)} /></div>
