@@ -7,7 +7,7 @@ export default function Section({title, entries, offset, data, handleUpdate}){
 
       const isSolution = dataRow.every(it => it=='X');
       const isNotSolution = dataRow.includes('✓');
-      const title = isNotSolution ? <s>{entry}</s> : (isSolution ? <b>{entry}</b> : entry);
+      const title = isNotSolution ? <s>{entry}</s> : (isSolution ? <strong>{entry}</strong> : entry);
       return (
       <>
       <div key={entry} className='sectionRow'>
