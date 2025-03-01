@@ -49,7 +49,7 @@ export default function ClueSheet() {
     return (
       <div className='outer'>
         <div className='header'>
-          <h1>Clue Scorecard</h1>
+          <h1>Clue Sheet</h1>
           <div className='controls'>
             <div>
               <button onClick={resetScorecard}>Reset</button>

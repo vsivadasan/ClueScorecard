@@ -1,5 +1,5 @@
-# ClueScorecard
+# Clue sheet
 
-A simple clue game score sheet. 
+An interactive player sheet for Clue game. This mobile friendly page is intended to accompany a game session of Clue.
 
-[Clue Score card](https://vsivadasan.github.io/ClueScorecard/)
+Short url: [bit.ly/cluetrack](https://bit.ly/cluetrack)
